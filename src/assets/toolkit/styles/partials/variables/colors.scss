@@ -1,0 +1,52 @@
+// Color definition
+// Define colors as variables. These variables should NOT be used outside of this file.
+
+// Common
+$-c-white:          #ffffff;
+$-c-black:          #000000;
+$-c-gray:           #d9dcdf;
+
+// UI Colors
+$-c-ui-green:     #48e091;
+$-c-ui-red:       #fb0c39;
+$-c-ui-yellow:    #ffd100;
+
+// Brand colors
+$c-brand-red:       #ff0000;
+$c-brand-green:     #008000;
+$c-brand-blue:      #0000ff;
+
+// Theme colors
+// To be used as variables in the project
+// Colors needs to be written as variables. Color hex codes are defined above.
+
+// Brand Colors
+$c-primary:         $c-brand-red;
+$c-secondary:       $c-brand-green;
+$c-action:          $c-brand-blue;
+
+// Accent Colors
+$c-accent:          $-c-gray;
+
+// Text
+$c-text:            $-c-black;
+$c-text-lighten:    lighten($-c-black, 50%);
+
+// Background
+$c-bg:              $-c-white;
+$c-bg-outer:        $-c-gray;
+
+// Border
+$c-border:          $-c-gray;
+
+// Alerts
+$c-positive:              $-c-ui-green;
+$c-negative:              $-c-ui-red;
+$c-neutral:               $-c-ui-yellow;
+
+// Input Placeholder
+$c-input-placeholder:     lighten($-c-black, 50%);
+
+// Transparent
+$c-transparent-light: rgba(255, 255, 255, 0);
+$c-transparent-dark: rgba(0, 0, 0, 0);

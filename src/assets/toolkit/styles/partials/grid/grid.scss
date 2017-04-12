@@ -1,0 +1,137 @@
+@mixin create-grid {
+  $grid-columns: 12;
+  $grid-gutter: $gutter-alt !global;
+  $grid-container-max-width: $container-max-width;
+
+  $grid-breakpoints: (
+    sm: $screen-sm,
+    md: $screen-md,
+    lg: $screen-lg,
+    xl: $screen-xl
+  ) !default;
+
+  %container-base {
+    @include clearfix;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: $grid-gutter;
+    padding-right: $grid-gutter;
+
+  }
+
+  .container {
+    @extend %container-base;
+    max-width: $grid-container-max-width;
+  }
+
+  .container-fluid {
+    @extend %container-base;
+  }
+
+  %row-base {
+    margin-left: ($grid-gutter / -2);
+    margin-right: ($grid-gutter / -2);
+  }
+
+  .row {
+    @extend %row-base;
+    @include clearfix;
+  }
+
+  .fluid-row {
+    @extend %row-base;
+    @include clearfix;
+    font-size: 0;
+
+    > [class^='col-'],
+    > [class*=' col-'] {
+      float: none;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    > * {
+      font-size: 1rem;
+    }
+  }
+
+  .flex-row {
+    @extend %row-base;
+    @include flex-display;
+    @include flex(0 1 auto);
+    @include flex-direction(row);
+    @include flex-wrap(wrap);
+    font-size: 0;
+
+    > [class^='col-'],
+    > [class*=' col-'] {
+      // sass-lint:disable-block mixins-before-declarations
+      display: inline-block;
+      @include flex-display;
+      @include flex(0 0 auto);
+      float: none;
+      vertical-align: top;
+
+      > * {
+        @include flex(1);
+      }
+    }
+
+    > * {
+      font-size: 1rem;
+    }
+  }
+
+  [class^='col-'],
+  [class*=' col-'] {
+    @include flex-basis(100%);
+    width: 100%;
+    min-height: 1px;
+    float: left;
+    padding-left: ($grid-gutter / 2);
+    padding-right: ($grid-gutter / 2);
+  }
+
+  // Create non-breakpoint specific columns
+  @for $i from 1 through $grid-columns {
+    .col-#{$i} {
+      @include flex-basis(((100% / $grid-columns) * $i));
+      width: ((100% / $grid-columns) * $i);
+      max-width: ((100% / $grid-columns) * $i);
+    }
+
+    .col-offset-#{$i} {
+      margin-left: ((100% / $grid-columns) * $i);
+    }
+  }
+
+  // Create breakpoint specific columns
+  @each $breakpoint-name in map-keys($grid-breakpoints) {
+    // Get each key's value
+    $breakpoint-width: map-get($grid-breakpoints, $breakpoint-name);
+
+    // Create media query for each breakpoint
+    @media (min-width: $breakpoint-width) {
+
+      // Add offset-0 to reset offset in specific breakpoints
+      .col-#{$breakpoint-name}-offset-0 {
+        margin-left: 0;
+      }
+
+      // Create columns and column offsets for each size in this breakpoint
+      @for $i from 1 through $grid-columns {
+        .col-#{$breakpoint-name}-#{$i} {
+          @include flex-basis(((100% / $grid-columns) * $i));
+          width: ((100% / $grid-columns) * $i);
+          max-width: ((100% / $grid-columns) * $i);
+        }
+
+        .col-#{$breakpoint-name}-offset-#{$i} {
+          margin-left: ((100% / $grid-columns) * $i);
+        }
+      }
+    }
+  }
+}
+@include create-grid;

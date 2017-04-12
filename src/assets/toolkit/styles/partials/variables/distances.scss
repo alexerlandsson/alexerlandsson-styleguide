@@ -1,0 +1,27 @@
+// Max width
+
+$body-max-width:        1920px;
+$container-max-width:   1470px;
+
+// Gutter
+
+$gutter:                1.875rem;
+$gutter-half:           ($gutter / 2);
+$gutter-double:         ($gutter * 2);
+$gutter-triple:         ($gutter * 2);
+
+$gutter-alt:            1.25rem;
+$gutter-alt-half:       ($gutter-alt / 2);
+$gutter-alt-double:     ($gutter-alt * 2);
+
+// Breakpoints
+
+$screen-sm: 600px; // Tablet portrait
+$screen-md: 900px; // Tablet landscape
+$screen-lg: 1200px; // Desktop
+$screen-xl: 1800px; // Big desktop
+
+$screen-lt-sm: $screen-sm - 1;
+$screen-lt-md: $screen-md - 1;
+$screen-lt-lg: $screen-lg - 1;
+$screen-lt-xl: $screen-xl - 1;

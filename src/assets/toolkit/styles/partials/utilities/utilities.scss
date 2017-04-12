@@ -1,0 +1,133 @@
+// Clearfix
+
+.clearfix             { @include clearfix; }
+
+// Text
+
+.text-left            { text-align: left; }
+.text-right           { text-align: right; }
+.text-center          { text-align: center; }
+
+.text-uppercase       { text-transform: uppercase; }
+.text-italic          { font-style: italic; }
+
+.text-smaller         { font-size: 0.875em; }
+.text-bigger          { font-size: 1.125em; }
+.text-smaller-rem     { font-size: 0.875rem; }
+.text-bigger-rem      { font-size: 1.125rem; }
+
+.line-height-smaller  { line-height: 1.2; }
+.line-height-bigger   { line-height: 2; }
+
+.word-break-all       { word-break: break-all; }
+
+.white-space-nowrap   { white-space: nowrap; }
+.white-space-normal   { white-space: normal; }
+
+// Vertical Align
+
+.valign-top           { vertical-align: top; }
+.valign-bottom        { vertical-align: bottom; }
+.valign-middle        { vertical-align: middle; }
+
+// Layout
+
+.l-block              { display: block; }
+.l-inline-block       { display: inline-block; }
+
+.l-table              { display: table; }
+.l-table-row          { display: table-row; }
+.l-table-cell         { display: table-cell; }
+.l-table-fixed        { table-layout: fixed; }
+
+.l-relative           { position: relative; }
+.l-absolute           { position: absolute; }
+.l-fixed              { position: fixed; }
+
+.l-full               { width: 100%; }
+
+// Hide
+
+.hidden               { display: none !important; }
+
+.overflow-hidden      { overflow: hidden; }
+
+// Float
+
+.float-left           { float: left; }
+.float-right          { float: right; }
+.float-none           { float: none; }
+
+// Margin & Padding
+
+.no-margin            { margin: 0 !important; }
+.no-padding           { padding: 0 !important; }
+
+// Border
+
+.border               { border: 1px solid $c-border; }
+.border-top           { border-top: 1px solid $c-border; }
+.border-bottom        { border-bottom: 1px solid $c-border; }
+.border-left          { border-left: 1px solid $c-border; }
+.border-right         { border-right: 1px solid $c-border; }
+
+.border-x {
+  border-left: 1px solid $c-border;
+  border-right: 1px solid $c-border;
+}
+
+.border-y {
+  border-top: 1px solid $c-border;
+  border-bottom: 1px solid $c-border;
+}
+
+// Spacing Utility Classes
+
+@mixin create-spacing-classes {
+
+  // This mixin generates utility classes used for spacing.
+
+  // Suffixes: none (all), t (top), b (bottom), l (left), r (right), x (left + right), y (top + bottom).
+  // To add sizes, add a new key/value (size suffix/gutter) to the $spacing-sizes map.
+  // To add propersies, add a news key/value (property suffix/CSS property) to the $spacing-properties map.
+  // Example of class construction: m-b-half, m-b, m-b-double etc.
+
+  // To use an unsuffixed classname, set key to 'none'
+  $spacing-sizes: (
+    none: $gutter,
+    half: $gutter-half,
+    double: $gutter-double,
+    triple: $gutter-triple
+  ) !default;
+
+  $spacing-properties: (
+    m: margin,
+    p: padding
+  ) !default;
+
+  @each $suffix in map-keys($spacing-sizes) {
+    $size: map-get($spacing-sizes, $suffix);
+
+    // Class name suffix
+    @if $suffix == none {
+      $suffix: '';
+    } @else {
+      $suffix: '-#{$suffix}';
+    }
+
+    @each $preperty-name in map-keys($spacing-properties) {
+      $property:   map-get($spacing-properties, $preperty-name);
+
+      // Generate spacing classes
+      // sass-lint:disable-block one-declaration-per-line
+      .#{$preperty-name}#{$suffix} { #{$property}: $size; }
+      .#{$preperty-name}-t#{$suffix} { #{$property}-top: $size; }
+      .#{$preperty-name}-b#{$suffix} { #{$property}-bottom: $size; }
+      .#{$preperty-name}-l#{$suffix} { #{$property}-left: $size; }
+      .#{$preperty-name}-r#{$suffix} { #{$property}-right: $size; }
+      .#{$preperty-name}-x#{$suffix} { #{$property}-left: $size; #{$property}-right: $size; }
+      .#{$preperty-name}-y#{$suffix} { #{$property}-top: $size; #{$property}-bottom: $size; }
+    }
+  }
+}
+@include create-spacing-classes;

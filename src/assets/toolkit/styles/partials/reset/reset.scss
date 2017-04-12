@@ -1,0 +1,81 @@
+// This file is used to reset critical user agent styling
+
+input,
+textarea {
+  -webkit-appearance: none;
+}
+
+textarea {
+  overflow: auto;
+}
+
+a,
+area,
+button,
+[role='button'],
+input,
+label,
+select,
+summary,
+textarea {
+  -ms-touch-action: manipulation;
+      touch-action: manipulation; // sass-lint:disable-line indentation
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary {
+  display: block;
+}
+
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+audio {
+  &:not([controls]) {
+    display: none;
+    height: 0;
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+a {
+  background-color: transparent;
+
+  img {
+    border: 0;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+svg {
+  &:not(:root) {
+    overflow: hidden;
+  }
+}
