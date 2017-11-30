@@ -11,10 +11,9 @@
 .text-uppercase       { text-transform: uppercase; }
 .text-italic          { font-style: italic; }
 
-.text-smaller         { font-size: 0.875em; }
-.text-bigger          { font-size: 1.125em; }
-.text-smaller-rem     { font-size: 0.875rem; }
-.text-bigger-rem      { font-size: 1.125rem; }
+.text-tiny            { font-size: 0.75em; }
+.text-small           { font-size: 0.875em; }
+.text-big             { font-size: 1.125em; }
 
 .text-dark            { color: $c-text-dark; }
 .text-dark-lighten    { color: $c-text-dark-lighten; }
