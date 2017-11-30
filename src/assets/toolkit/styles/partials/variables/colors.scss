@@ -29,8 +29,9 @@ $c-action:          $c-brand-blue;
 $c-accent:          $-c-gray;
 
 // Text
-$c-text:            $-c-black;
-$c-text-lighten:    lighten($-c-black, 50%);
+$c-text-dark:           $-c-black;
+$c-text-dark-lighten:   lighten($-c-black, 50%);
+$c-text-light:          $-c-white;
 
 // Background
 $c-bg:              $-c-white;

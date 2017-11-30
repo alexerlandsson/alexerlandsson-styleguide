@@ -16,6 +16,10 @@
 .text-smaller-rem     { font-size: 0.875rem; }
 .text-bigger-rem      { font-size: 1.125rem; }
 
+.text-dark            { color: $c-text-dark; }
+.text-dark-lighten    { color: $c-text-dark-lighten; }
+.text-light           { color: $c-text-light; }
+
 .line-height-smaller  { line-height: 1.2; }
 .line-height-bigger   { line-height: 2; }
 
@@ -80,6 +84,15 @@
   border-top: 1px solid $c-border;
   border-bottom: 1px solid $c-border;
 }
+
+// Background Colors
+
+@mixin util-bg($bg, $color) {
+  background-color: $bg;
+  color: $color;
+}
+
+.bg-primary             { @include util-bg($c-primary, $c-text-on-primary); }
 
 // Spacing Utility Classes
 
