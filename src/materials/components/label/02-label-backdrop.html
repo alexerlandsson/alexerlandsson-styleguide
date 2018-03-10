@@ -3,6 +3,7 @@ notes: |
   This is a label with a backdrop.
 
 default-text: Lorem ipsum
+default-backdrop: 01
 ---
 
-<label data-am-label="backdrop" data-backdrop="01">{{#if text}}{{text}}{{else}}{{default-text}}{{/if}}</label>
+<label data-am-label="backdrop" data-backdrop="{{#if backdrop}}{{backdrop}}{{else}}{{default-backdrop}}{{/if}}">{{#if text}}{{text}}{{else}}{{default-text}}{{/if}}</label>

@@ -1,6 +1,24 @@
 [data-am-tilegrid] {
+  margin-left: -($g-app-gutter-md);
+  margin-right: -($g-app-gutter-md);
+
+  .tile-grid {
+    padding-left: $g-app-gutter-md;
+    padding-right: $g-app-gutter-md;
+  }
+
   .tile-item {
     display: inline-block;
     width: 33.333%;
+  }
+
+  .tile-link {
+    &:hover {
+      .tile {
+        &:before {
+          opacity: 1;
+        }
+      }
+    }
   }
 }

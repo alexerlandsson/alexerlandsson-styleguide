@@ -7,4 +7,9 @@
   .tile {
     margin-left: -1px;
   }
+
+  .tile-content {
+    padding-left: $gutter-half;
+    padding-right: $gutter-half;
+  }
 }

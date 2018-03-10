@@ -144,6 +144,7 @@
   // To use an unsuffixed classname, set key to 'none'
   $spacing-sizes: (
     none: $gutter,
+    mini: ($gutter-half / 2),
     half: $gutter-half,
     double: $gutter-double,
     triple: $gutter-triple

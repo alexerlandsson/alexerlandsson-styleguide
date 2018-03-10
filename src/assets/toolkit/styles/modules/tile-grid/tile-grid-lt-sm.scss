@@ -1,9 +1,46 @@
+[data-am-tilegrid] {
+  @include unselectable;
+  
+  .tile-link {
+    &:active {
+      .tile-content {
+        padding-left: $gutter-half;
+        padding-right: $gutter-half;
+      }
+    }
+  }
+}
+
 [data-am-tilegrid~='overflow'] {
+  margin-top: -($gutter);
+  margin-bottom: -($gutter);
 
   .tile-grid {
+    position: relative;
+    padding: $gutter;
+    border-top: 0;
+    border-bottom: 0;
     overflow: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      height: 1px;
+      left: 0;
+      right: 0;
+      background-color: $c-border;
+    }
+
+    &:before {
+      top: $gutter;
+    }
+
+    &:after {
+      bottom: $gutter;
+    }
   }
 
   .tile {

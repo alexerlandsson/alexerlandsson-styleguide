@@ -1,0 +1,10 @@
+[data-am-app] {
+  .app-section {
+    padding-left: $g-app-gutter-md;
+    padding-right: $g-app-gutter-md;
+
+    & + .app-section {
+      margin-top: ($gutter-quadruple * 2);
+    }
+  }
+}

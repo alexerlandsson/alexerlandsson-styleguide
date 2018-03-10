@@ -4,12 +4,67 @@ title: Alex Erlandsson Style Guide - Start
 
 <main data-am-app="">
   <section class="app-section app-section-viewport">
-    {{> tile-grid.tile-grid-fixed-height-overflow }}
+    <div class="row">
+      <div class="col-10 col-md-6">
+        <h1>Alex Erlandsson</h1>
+      </div>
+    </div>
+    {{> overflow-grid.overflow-grid }}
   </section>
-  <section class="app-section">
-    App section
+  <section class="app-section" id="section-about">
+    <div class="row">
+      <div class="col-10 col-md-6">
+        <div class="m-b">
+          {{> label.label-backdrop text="About" backdrop="01" }}
+        </div>
+        <h2>I am a front-end developer</h2>
+        <div data-am-content="">
+          <p>I am a frontend developer at Our Studio based in Gothenburg, Sweden. My interest in web development started back in 2009 when I was looking for a way to extend my newly obtained skills in Photoshop. The web was found to be the perfect match and it has lead me into what and who I am today.</p>
+        </div>
+      </div>
+    </div>
+    <div class="m-t">
+      {{> link.link-arrow text="Read more" }}
+    </div>
   </section>
-  <section class="app-section">
-    App section
+  <section class="app-section" id="section-portfolio">
+    <div class="row">
+      <div class="col-10 col-md-6">
+        <div class="m-b">
+          {{> label.label-backdrop text="Portfolio" backdrop="02" }}
+        </div>
+        <h2>Projects I’ve been working on</h2>
+        <div data-am-content="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <div class="m-t">
+      {{> tile-grid.tile-grid-fixed-height-overflow }}
+    </div>
+    <div class="m-t">
+      {{> link.link-arrow text="View all" }}
+    </div>
+  </section>
+  <section class="app-section" id="section-contact">
+    <div class="row">
+      <div class="col-10 col-md-6">
+        <div class="m-b">
+          {{> label.label-backdrop text="Contact" backdrop="03" }}
+        </div>
+        <h2>Get in touch</h2>
+        <div data-am-content="">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+      </div>
+    </div>
+    <div class="m-t">
+      {{> tile-grid.tile-grid }}
+    </div>
+    <div class="m-t">
+      {{> link.link-arrow text="View all" }}
+    </div>
   </section>
 </main>
+
+{{> footer.footer }}

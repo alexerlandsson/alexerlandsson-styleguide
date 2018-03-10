@@ -3,6 +3,10 @@
   @include active-scale(0.95);
   display: inline-block;
   color: $c-text-light;
+
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 [data-am-link~='arrow'] {

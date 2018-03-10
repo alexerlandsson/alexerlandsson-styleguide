@@ -1,0 +1,38 @@
+[data-am-overflowgrid] {
+  margin-left: -($g-app-gutter);
+  margin-right: -($g-app-gutter);
+  margin-bottom: -($gutter);
+
+  .overflow-grid {
+    padding-bottom: $gutter;
+    padding-left: $g-app-gutter;
+    padding-right: $g-app-gutter;
+    list-style: none;
+    margin: 0;
+    white-space: nowrap;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties
+    font-size: 0;
+
+    > * {
+      font-size: 1rem;
+    }
+  }
+
+  .overflow-grid-item {
+    display: inline-block;
+    width: 150px;
+  }
+
+  .overflow-grid-action {
+    @include active-scale;
+    display: block;
+    color: $c-text-dark;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+
+  }
+}

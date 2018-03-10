@@ -1,12 +1,12 @@
 [data-am-tilegrid] {
-  margin-left: -($grid-gutter);
-  margin-right: -($grid-gutter);
-  border-top: 1px solid $c-border;
-  border-bottom: 1px solid $c-border;
+  margin-left: -($g-app-gutter);
+  margin-right: -($g-app-gutter);
 
   .tile-grid {
-    padding-left: $grid-gutter;
-    padding-right: $grid-gutter;
+    padding-left: $g-app-gutter;
+    padding-right: $g-app-gutter;
+    border-top: 1px solid $c-border;
+    border-bottom: 1px solid $c-border;
     list-style: none;
     margin: 0;
     margin-top: -1px;
@@ -31,7 +31,9 @@
 
     &:active {
       .tile {
-        box-shadow: $g-box-shadow;
+        &:before {
+          opacity: 1;
+        }
       }
     }
   }
@@ -39,15 +41,31 @@
   .tile {
     @include flex-display;
     @include flex-direction(row);
+    position: relative;
     border: 1px solid $c-border;
     border: 1px solid $c-border;
     margin-bottom: -1px;
+    transition: box-shadow 200ms ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      box-shadow: $g-box-shadow;
+      opacity: 0;
+      transition: opacity 200ms ease;
+    }
   }
 
   .tile-content {
     @include flex(1 0 auto);
     @include align-self(center);
-    padding: $gutter-half;
+    padding-top: $gutter-half;
+    padding-bottom: $gutter-half;
+    transition: padding 200ms ease;
   }
 
   .tile-image {

@@ -34,6 +34,10 @@ button {
   }
 }
 
+a {
+  -webkit-tap-highlight-color: $c-fade-dark-00;
+}
+
 hr {
   height: 1px;
   width: 100%;
@@ -58,4 +62,16 @@ input {
   &:-ms-input-placeholder {
     color: $c-input-placeholder;
   }
+}
+
+// Text Selection
+
+::selection {
+  background: blue;
+  color: white;
+}
+
+::-moz-selection {
+  background: blue;
+  color: white;
 }
