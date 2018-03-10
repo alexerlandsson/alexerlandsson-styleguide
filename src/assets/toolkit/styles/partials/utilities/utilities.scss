@@ -15,9 +15,7 @@
 .text-small           { font-size: 0.875em; }
 .text-big             { font-size: 1.125em; }
 
-.text-dark            { color: $c-text-dark; }
-.text-dark-lighten    { color: $c-text-dark-lighten; }
-.text-light           { color: $c-text-light; }
+.text-default         { color: $c-text; }
 
 .line-height-smaller  { line-height: 1.2; }
 .line-height-bigger   { line-height: 2; }
@@ -38,16 +36,21 @@
 .l-block              { display: block; }
 .l-inline-block       { display: inline-block; }
 
-.l-table              { display: table; }
-.l-table-row          { display: table-row; }
-.l-table-cell         { display: table-cell; }
-.l-table-fixed        { table-layout: fixed; }
-
 .l-relative           { position: relative; }
 .l-absolute           { position: absolute; }
 .l-fixed              { position: fixed; }
 
 .l-full               { width: 100%; }
+
+// Table
+
+.table                { display: table; }
+.table-layout-fixed   { table-layout: fixed; }
+.thead                { display: table-header-group; }
+.tbody                { display: table-row-group; }
+.tr                   { display: table-row; }
+.td                   { display: table-cell; }
+.th                   { display: table-cell; }
 
 // Hide
 
@@ -91,7 +94,8 @@
   color: $color;
 }
 
-.bg-primary             { @include util-bg($c-primary, $c-text-on-primary); }
+.bg-primary       { @include util-bg($c-primary, $c-text-on-primary); }
+.bg-secondary     { @include util-bg($c-secondary, $c-text-on-secondary); }
 
 // Spacing Utility Classes
 

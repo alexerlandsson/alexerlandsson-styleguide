@@ -1,18 +1,11 @@
 // This files includes CSS for included fonts
 
-// Example of how to include fonts in this file:
-
-// @font-face {
-//   font-family: 'FONTNAME';
-//   src: url('../PATH/FONTNAME.eot?') format('eot'),
-//	  	  url('../PATH/FONTNAME.woff') format('woff'),
-//    	  url('../PATH/FONTNAME.ttf') format('truetype');
-// }
-
-// @mixin FONTNAME() {
-// 	font-family: 'FONTNAME', sans-serif;
-// }
-
 @mixin font-regular {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-bold {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
 }

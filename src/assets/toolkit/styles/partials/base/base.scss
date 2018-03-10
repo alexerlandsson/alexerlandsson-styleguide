@@ -6,14 +6,9 @@
   }
 }
 
-html {
-  background-color: $c-bg-outer;
-}
-
 body {
   position: relative;
   margin: 0;
-  max-width: $body-max-width;
   margin-left: auto;
   margin-right: auto;
   background-color: $c-bg;
@@ -23,7 +18,7 @@ button {
   position: relative;
   display: inline-block;
   vertical-align: top;
-  background: $c-transparent-light;
+  background: $c-fade-light-00;
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -31,7 +26,7 @@ button {
   line-height: 1.2;
   text-align: center;
   color: currentColor;
-  border-color: $c-transparent-light;
+  border-color: $c-fade-light-00;
   font: inherit;
 
   &:focus {

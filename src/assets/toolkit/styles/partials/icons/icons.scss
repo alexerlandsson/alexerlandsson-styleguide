@@ -5,14 +5,9 @@ $font-path: '../font/icons/';
 $font-name: 'icons';
 
 @font-face {
-  // sass-lint:disable-block no-duplicate-properties indentation
   font-family: '#{$font-name}';
-  src: url('#{$font-path}#{$font-name}.eot?58336588');
-  src: url('#{$font-path}#{$font-name}.eot?58336588#iefix') format('embedded-opentype'),
-       url('#{$font-path}#{$font-name}.woff2?58336588') format('woff2'),
-       url('#{$font-path}#{$font-name}.woff?58336588') format('woff'),
-       url('#{$font-path}#{$font-name}.ttf?58336588') format('truetype'),
-       url('#{$font-path}#{$font-name}.svg?58336588#icons') format('svg');
+  src: url('#{$font-path}#{$font-name}.woff2') format('woff2'),
+       url('#{$font-path}#{$font-name}.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -37,8 +32,10 @@ $font-name: 'icons';
     -moz-osx-font-smoothing: grayscale;
   }
 
-  // Remove spacing
-  &.no-margin {
+  // Remove spacing when using spacing utility classes
+  &.no-margin,
+  &[class*='m-l'],
+  &[class*='m-r'] {
     &:before {
       margin: 0;
     }

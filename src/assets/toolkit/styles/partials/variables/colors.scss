@@ -4,50 +4,37 @@
 // Common
 $-c-white:          #ffffff;
 $-c-black:          #000000;
-$-c-gray:           #d9dcdf;
-
-// UI Colors
-$-c-ui-green:     #48e091;
-$-c-ui-red:       #fb0c39;
-$-c-ui-yellow:    #ffd100;
 
 // Brand colors
-$c-brand-red:       #ff0000;
-$c-brand-green:     #008000;
-$c-brand-blue:      #0000ff;
+$-c-brand-gray:       #2a2a2a;
+$-c-brand-gray-light: #6d6d6d;
 
 // Theme colors
 // To be used as variables in the project
 // Colors needs to be written as variables. Color hex codes are defined above.
 
 // Brand Colors
-$c-primary:         $c-brand-red;
-$c-secondary:       $c-brand-green;
-$c-action:          $c-brand-blue;
-
-// Accent Colors
-$c-accent:          $-c-gray;
+$c-primary:             $-c-brand-gray;
+$c-secondary:           $-c-brand-gray-light;
 
 // Text
-$c-text-dark:           $-c-black;
-$c-text-dark-lighten:   lighten($-c-black, 50%);
-$c-text-light:          $-c-white;
+$c-text:                $-c-white;
+$c-text-secondary:      $-c-brand-gray-light; // TODO: Change name of variable
+
+$c-text-on-primary:     $-c-white;
+$c-text-on-secondary:   $-c-white;
 
 // Background
-$c-bg:              $-c-white;
-$c-bg-outer:        $-c-gray;
+$c-bg:                  $-c-brand-gray;
 
 // Border
-$c-border:          $-c-gray;
-
-// Alerts
-$c-positive:              $-c-ui-green;
-$c-negative:              $-c-ui-red;
-$c-neutral:               $-c-ui-yellow;
+$c-border:              lighten($-c-brand-gray, 2%); // TODO: Change
 
 // Input Placeholder
-$c-input-placeholder:     lighten($-c-black, 50%);
+$c-input-placeholder:   $-c-brand-gray;
 
-// Transparent
-$c-transparent-light: rgba(255, 255, 255, 0);
-$c-transparent-dark: rgba(0, 0, 0, 0);
+// Fade Light
+$c-fade-light-00:       rgba(255, 255, 255, 0);
+
+// Fade Dark
+$c-fade-dark-00:        rgba(0, 0, 0, 0);

@@ -6,6 +6,7 @@ body {
   @include font-regular;
   font-size: 1rem;
   line-height: 1.6;
+  color: $c-text;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -21,11 +22,11 @@ h5,
 .h5,
 h6,
 .h6 {
+  @include font-bold;
   line-height: 1.2;
   margin-top: 0;
   margin-bottom: $gutter-half;
   position: relative;
-  font-weight: normal;
 }
 
 h1,
