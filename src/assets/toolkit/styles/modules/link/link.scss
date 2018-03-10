@@ -1,0 +1,25 @@
+[data-am-link] {
+  @include font-bold;
+  @include active-scale(0.95);
+  display: inline-block;
+  color: $c-text-light;
+}
+
+[data-am-link~='arrow'] {
+  position: relative;
+  padding-right: 1ch;
+
+  &:after {
+    @include transform(translateY(-50%));
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 50px;
+    height: 1em;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NSA2Ij48cGF0aCBkPSJNNjctLjF2MkgwdjJoNjd2Mmw4LTMtOC0zeiIgZmlsbD0iI2ZmZiIvPjwvc3ZnPg==);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+  }
+}

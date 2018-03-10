@@ -1,0 +1,21 @@
+[data-am-label] {
+  @include font-bold;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+[data-am-label~='backdrop'] {
+  position: relative;
+
+  &:before {
+    @include transform(translateY(-50%));
+    content: attr(data-backdrop);
+    position: absolute;
+    top: 50%;
+    left: -($grid-gutter);
+    font-size: 5em;
+    line-height: 1;
+    color: $c-text-light;
+    opacity: 0.05;
+  }
+}

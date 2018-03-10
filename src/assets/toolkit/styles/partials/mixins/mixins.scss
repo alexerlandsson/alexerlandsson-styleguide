@@ -1,6 +1,7 @@
 // sass-lint:disable indentation
 
 // Clearfix
+// This mixin adds a empty :after to clear floated elements
 
 @mixin clearfix {
   &:after {
@@ -10,46 +11,33 @@
   }
 }
 
-// Font Size Lock
-
-@mixin font-size-lock($min-size, $max-size, $min-width, $max-width) {
-
-  // $min-size: rem
-  // $max-size: px
-  // $min-width: px
-  // $max-width: px
-
-  @if (unit($min-size) == px) {
-    $min-size: px-rem(strip-unit($min-size));
-  } @else if (unit($min-size) == em) {
-    $min-size: #{strip-unit($min-size)}rem;
-  } @else if (unitless($min-size)) {
-    $min-size: #{$min-size}rem;
-  }
-
-  font-size: $min-size;
-  @media (min-width: $min-width) and (max-width: $max-width) {
-    $size: $min-size;
-    $size-increase: (strip-unit($max-size) - (strip-unit($size) * 16));
-    font-size: calc(#{$size} + #{$size-increase} * (100vw - #{$min-width}) / (#{strip-unit($max-width)} - #{strip-unit($min-width)}));
-  }
-  @media (min-width: ($max-width + 1px)) {
-    font-size: $max-size;
-  }
-}
-
 // Keyframes
+// This mixin is used when creating keyframes to add a prefixed version as well
 
 @mixin keyframes($animation-name) {
   @-webkit-keyframes #{$animation-name} {
     @content;
   }
+  
   @keyframes #{$animation-name} {
     @content;
   }
 }
 
+// Active Scale
+// This mixin adds an :active scale state to any element
+
+@mixin active-scale($value: 0.95) {
+  @include transform-origin(50% 50%);
+  transition: transform 200ms ease;
+
+  &:active {
+    @include transform(scale($value));
+  }
+}
+
 // Transform
+// This mixin is used to add prefixes to the transform property
 
 @mixin transform($value...) {
   -webkit-transform: $value;
@@ -58,6 +46,7 @@
 }
 
 // Transform origin
+// This mixin is used to add prefixes to the transform-origin property
 
 @mixin transform-origin($value) {
   -webkit-transform-origin: $value;
@@ -66,29 +55,15 @@
 }
 
 // Animation
+// This mixin is used to add prefixes to the animation property
 
 @mixin animation($value...) {
   -webkit-animation: $value;
           animation: $value;
 }
 
-// Font Size Fallback
-
-@mixin font-size($size) {
-  // sass-lint:disable-block no-duplicate-properties
-  font-size: $size;
-  font-size: calculate-rem($size);
-}
-
-// Opacity (IE5+)
-
-@mixin opacity($opacity) {
-  $opacity-ie: $opacity * 100;
-  opacity: $opacity;
-  filter: alpha(opacity=$opacity-ie);
-}
-
 // Unselectable
+// This mixin is used to make the text inside an element unselectable
 
 @mixin unselectable {
   -webkit-user-select: none;
@@ -98,6 +73,7 @@
 }
 
 // User select
+// This mixin is used to add prefixes to the user-select property
 
 @mixin user-select($value) {
   -webkit-user-select: $value;
@@ -107,12 +83,16 @@
 }
 
 // Columns
+// This mixin is used to add prefixes to the columns property
 
 @mixin columns($value) {
   -webkit-columns: $value;
      -moz-columns: $value;
           columns: $value;
 }
+
+// Columns Gap
+// This mixin is used to add prefixes to the columns-gap property
 
 @mixin column-gap($value) {
   -webkit-column-gap: $value;
@@ -121,6 +101,7 @@
 }
 
 // Flexbox
+// These mixins are used to add prefixes to flexbox related properties
 
 @mixin flex-display($display: flex) {
   // sass-lint:disable-block no-duplicate-properties

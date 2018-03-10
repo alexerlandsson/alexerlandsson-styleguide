@@ -1,5 +1,4 @@
 // Settings
-// Important: Do not import any SCSS files before these or change its order
 @import '../partials/variables/global-variables';
 @import '../partials/variables/distances';
 @import '../partials/variables/colors';
@@ -16,9 +15,7 @@
 @import '../partials/reset/reset';
 @import '../partials/grid/grid';
 
-// Frameworks
-
 // Modules
-@import '../modules/button/button';
 @import '../modules/content/content';
-@import '../modules/list/list';
+@import '../modules/label/label';
+@import '../modules/link/link';
