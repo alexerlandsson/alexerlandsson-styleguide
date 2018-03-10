@@ -5,14 +5,12 @@ $container-max-width:   1470px;
 
 // Gutter
 
-$gutter:                1.875rem;
+$gutter:                20px;
+$gutter-quarter:        ($gutter / 4);
 $gutter-half:           ($gutter / 2);
 $gutter-double:         ($gutter * 2);
-$gutter-triple:         ($gutter * 2);
-
-$gutter-alt:            1.25rem;
-$gutter-alt-half:       ($gutter-alt / 2);
-$gutter-alt-double:     ($gutter-alt * 2);
+$gutter-triple:         ($gutter * 3);
+$gutter-quadruple:      ($gutter * 4);
 
 // Breakpoints
 

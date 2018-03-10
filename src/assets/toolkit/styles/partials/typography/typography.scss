@@ -6,7 +6,7 @@ body {
   @include font-regular;
   font-size: 1rem;
   line-height: 1.6;
-  color: $c-text;
+  color: $c-text-dark;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -24,14 +24,15 @@ h6,
 .h6 {
   @include font-bold;
   line-height: 1.2;
+  color: $c-text-light;
   margin-top: 0;
-  margin-bottom: $gutter-half;
+  margin-bottom: $gutter;
   position: relative;
 }
 
 h1,
 .h1 {
-  font-size: 2rem;
+  font-size: 2.25rem;
 }
 
 h2,
@@ -41,23 +42,22 @@ h2,
 
 h3,
 .h3 {
-  font-size: 1.17rem;
+  font-size: 1.25rem;
 }
 
 h4,
 .h4 {
-  font-size: 1.33rem;
+  font-size: 1rem;
 }
 
 h5,
 .h5 {
-  font-size: 0.83rem;
+  font-size: 0.875rem;
 }
 
 h6,
 .h6 {
-  font-size: 0.67rem;
-  margin-bottom: ($gutter / 6);
+  font-size: 0.75rem;
 }
 
 p {

@@ -15,7 +15,8 @@
 .text-small           { font-size: 0.875em; }
 .text-big             { font-size: 1.125em; }
 
-.text-default         { color: $c-text; }
+.text-dark            { color: $c-text-dark; }
+.text-light           { color: $c-text-light; }
 
 .line-height-smaller  { line-height: 1.2; }
 .line-height-bigger   { line-height: 2; }

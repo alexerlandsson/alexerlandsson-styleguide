@@ -1,7 +1,6 @@
 @mixin create-grid {
   $grid-columns: 12;
-  $grid-gutter: $gutter-alt !global;
-  $grid-container-max-width: $container-max-width;
+  $grid-gutter: $gutter !global;
 
   $grid-breakpoints: (
     sm: $screen-sm,
@@ -22,7 +21,6 @@
 
   .container {
     @extend %container-base;
-    max-width: $grid-container-max-width;
   }
 
   .container-fluid {

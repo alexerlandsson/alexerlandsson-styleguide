@@ -7,7 +7,7 @@ $-c-black:          #000000;
 
 // Brand colors
 $-c-brand-gray:       #2a2a2a;
-$-c-brand-gray-light: #6d6d6d;
+$-c-brand-gray-light: #a2a2a2;
 
 // Theme colors
 // To be used as variables in the project
@@ -18,11 +18,11 @@ $c-primary:             $-c-brand-gray;
 $c-secondary:           $-c-brand-gray-light;
 
 // Text
-$c-text:                $-c-white;
-$c-text-secondary:      $-c-brand-gray-light; // TODO: Change name of variable
+$c-text-dark:           $-c-brand-gray-light;
+$c-text-light:          $-c-white;
 
 $c-text-on-primary:     $-c-white;
-$c-text-on-secondary:   $-c-white;
+$c-text-on-secondary:   $-c-brand-gray;
 
 // Background
 $c-bg:                  $-c-brand-gray;
