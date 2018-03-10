@@ -1,7 +1,7 @@
 // Settings
-@import '../partials/variables/global-variables';
 @import '../partials/variables/distances';
 @import '../partials/variables/colors';
+@import '../partials/variables/global-variables';
 @import '../partials/functions/functions';
 @import '../partials/mixins/mixins';
 @import '../partials/keyframes/keyframes';
@@ -16,6 +16,9 @@
 @import '../partials/grid/grid';
 
 // Modules
+@import '../modules/app/app';
 @import '../modules/content/content';
+@import '../modules/footer/footer';
 @import '../modules/label/label';
 @import '../modules/link/link';
+@import '../modules/tile-grid/tile-grid';

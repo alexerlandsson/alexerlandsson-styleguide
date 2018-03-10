@@ -1,0 +1,12 @@
+[data-am-tilegrid~='overflow'] {
+
+  .tile-grid {
+    overflow: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-misspelled-properties
+  }
+
+  .tile {
+    margin-left: -1px;
+  }
+}

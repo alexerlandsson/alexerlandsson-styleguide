@@ -4,16 +4,15 @@
 
 // Text
 
+.font-regular         { @include font-regular; }
+.font-bold            { @include font-bold; }
+
 .text-left            { text-align: left; }
 .text-right           { text-align: right; }
 .text-center          { text-align: center; }
 
 .text-uppercase       { text-transform: uppercase; }
 .text-italic          { font-style: italic; }
-
-.text-tiny            { font-size: 0.75em; }
-.text-small           { font-size: 0.875em; }
-.text-big             { font-size: 1.125em; }
 
 .text-dark            { color: $c-text-dark; }
 .text-light           { color: $c-text-light; }
@@ -97,6 +96,39 @@
 
 .bg-primary       { @include util-bg($c-primary, $c-text-on-primary); }
 .bg-secondary     { @include util-bg($c-secondary, $c-text-on-secondary); }
+
+// Text Sizes
+
+@mixin crate-font-sizes {
+
+  // This mixin generates utility classes used for text size.
+
+  // Suffixes: tiny, small, default, big, xbig
+  // To add a text size, use prefix 'font-size-' followed by the suffix as a class.
+  // If you wish to add the font-size in rem instad of em, add '-rem' at the end of the class name.
+  // Example of class construction: text-tiny, text-small etc.
+
+  $text-sizes: (
+    tiny: 0.75,
+    small: 0.875,
+    default: 1,
+    big: 1.125,
+    xbig: 1.375,
+  );
+
+  @each $suffix in map-keys($text-sizes) {
+    $size: map-get($text-sizes, $suffix);
+
+    .font-size-#{$suffix} {
+      font-size: #{$size}em;
+    }
+
+    .font-size-#{$suffix}-rem {
+      font-size: #{$size}rem;
+    }
+  }
+}
+@include crate-font-sizes;
 
 // Spacing Utility Classes
 

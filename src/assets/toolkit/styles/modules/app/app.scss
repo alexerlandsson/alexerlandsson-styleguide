@@ -1,0 +1,15 @@
+[data-am-app] {
+  .app-section {
+    display: block;
+    padding-left: $gutter;
+    padding-right: $gutter;
+
+    & + .app-section {
+      margin-top: $gutter-triple;
+    }
+  }
+
+  .app-section-viewport {
+    height: 100vh;
+  }
+}
