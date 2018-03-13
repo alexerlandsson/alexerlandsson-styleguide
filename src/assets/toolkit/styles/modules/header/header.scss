@@ -1,0 +1,67 @@
+[data-am-header] {
+  $main-nav-btn-width: 40px;
+  $main-nav-btn-height: 20px;
+  $main-nav-btn-weight: 2px;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+
+  .main-nav-btn {
+    @include active-scale;
+    position: absolute;
+    top: $gutter-half;
+    right: $g-app-gutter;
+    width: $main-nav-btn-width;
+    height: $main-nav-btn-height;
+
+    &.is-active {
+      .main-nav-btn-line-1 {
+        @include transform(rotate(-45deg));
+        top: 50%;
+        margin-top: -($main-nav-btn-weight / 2);
+        left: 0;
+        right: auto;
+        width: 30%;
+      }
+
+      .main-nav-btn-line-3 {
+        @include transform(rotate(45deg));
+        bottom: 50%;
+        margin-bottom: -($main-nav-btn-weight / 2);
+        right: auto;
+        left: 0;
+        width: 30%;
+      }
+    }
+  }
+
+  [class^='main-nav-btn-line-'] {
+    display: block;
+    position: absolute;
+    height: $main-nav-btn-weight;
+    background-color: $c-secondary;
+  }
+
+  .main-nav-btn-line-1 {
+    @include transform-origin(0 0);
+    top: 0;
+    right: 0;
+    width: 100%;
+  }
+
+  .main-nav-btn-line-2 {
+    top: 50%;
+    width: 100%;
+    margin-top: -($main-nav-btn-weight / 2);
+  }
+
+  .main-nav-btn-line-3 {
+    @include transform-origin(0 0);
+    bottom: 0;
+    right: 0;
+    width: 60%;
+  }
+}

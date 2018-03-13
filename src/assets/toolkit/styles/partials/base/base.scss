@@ -27,6 +27,7 @@ button {
   text-align: center;
   color: currentColor;
   border-color: $c-fade-light-00;
+  -webkit-tap-highlight-color: $c-fade-dark-00;
   font: inherit;
 
   &:focus {

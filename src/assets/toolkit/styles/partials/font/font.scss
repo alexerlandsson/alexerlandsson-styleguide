@@ -9,3 +9,8 @@
   font-family: 'Roboto', sans-serif;
   font-weight: 900;
 }
+
+@mixin font-heading {
+  font-family: 'Playfair Display', sans-serif;
+  font-weight: 900;
+}

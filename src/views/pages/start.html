@@ -2,14 +2,21 @@
 title: Alex Erlandsson Style Guide - Start
 ---
 
+{{> header.header }}
+{{> main-navigation.main-navigation demo-off="true" }}
+
 <main data-am-app="">
   <section class="app-section app-section-viewport">
     <div class="row">
       <div class="col-10 col-md-6">
         <h1>Alex Erlandsson</h1>
+        <div data-am-label="" class="m-b">Frontend Developer</div>
       </div>
     </div>
     {{> overflow-grid.overflow-grid }}
+    <div class="app-section-content-bottom text-center">
+      {{> button.button text="explore" }}
+    </div>
   </section>
   <section class="app-section" id="section-about">
     <div class="row">
@@ -65,6 +72,10 @@ title: Alex Erlandsson Style Guide - Start
       {{> link.link-arrow text="View all" }}
     </div>
   </section>
+
+  <!--
+  {{> main-navigation.main-navigation demo-off="true" }}
+  -->
 </main>
 
 {{> footer.footer }}

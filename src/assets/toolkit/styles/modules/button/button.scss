@@ -1,0 +1,12 @@
+[data-am-button] {
+  @include active-scale;
+  @include font-bold;
+  display: inline-block;
+  padding: $gutter-quarter $gutter-half;
+  background-color: transparent;
+  color: $c-text-dark;
+  border: 2px solid $c-secondary;
+  font-size: 0.75rem;
+  cursor: pointer;
+  text-transform: uppercase;
+}

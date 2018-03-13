@@ -1,5 +1,6 @@
 [data-am-app] {
   .app-section {
+    position: relative;
     display: block;
     padding-left: $g-app-gutter;
     padding-right: $g-app-gutter;
@@ -14,5 +15,12 @@
     @include flex-direction(column);
     @include justify-content(center);
     height: 100vh;
+  }
+
+  .app-section-content-bottom {
+    @include transform(translateX(-50%));
+    position: absolute;
+    bottom: $gutter;
+    left: 50%;
   }
 }

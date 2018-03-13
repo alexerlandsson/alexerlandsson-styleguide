@@ -1,0 +1,53 @@
+@mixin create-button-md {
+  $button-animation-speed: 300ms;
+  $button-before-skew: -45deg;
+  $button-before-translate: 150%;
+
+  @include keyframes(buttonIn) {
+    0% {
+      transform: skew($button-before-skew) translateX(-($button-before-translate));
+    }
+
+    100% {
+      transform: skew($button-before-skew) translateX(-50%);
+    }
+  }
+
+  @include keyframes(buttonOut) {
+    0% {
+      transform: skew($button-before-skew) translateX(-50%);
+    }
+
+    100% {
+      transform: skew($button-before-skew) translateX($button-before-translate);
+    }
+  }
+
+  [data-am-button] {
+    position: relative;
+    overflow: hidden;
+    transition: $button-animation-speed ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 150%;
+      height: 100%;
+      background-color: $c-secondary;
+      z-index: -1;
+      transform: skew($button-before-skew) translateX(-($button-before-translate));
+      animation: buttonOut $button-animation-speed ease-in;
+    }
+
+    &:hover {
+      color: $c-text-on-secondary;
+
+      &:before {
+        animation: buttonIn $button-animation-speed ease-out forwards;
+      }
+    }
+  }
+}
+@include create-button-md;

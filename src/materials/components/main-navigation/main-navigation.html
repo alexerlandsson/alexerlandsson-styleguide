@@ -1,0 +1,52 @@
+---
+notes: |
+  This is the main navigation opened from the menu button in the header.
+---
+
+{{#if demo-off}}
+
+<nav data-am-mainnavigation="">
+  <div class="main-nav">
+    <ul class="main-nav-list">
+      <li class="main-nav-item is-active">
+        <a href="#" title="" class="main-nav-link">Home</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">About</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">Portfolio</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{else}}
+
+<!--
+IMPORTANT: This component contains inline styling for style guide display purpose only. Make sure to remove all inline styling before use in production.
+-->
+
+<nav data-am-mainnavigation="" style="position: relative;">
+  <div class="main-nav">
+    <ul class="main-nav-list">
+      <li class="main-nav-item is-active">
+        <a href="#" title="" class="main-nav-link">Home</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">About</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">Portfolio</a>
+      </li>
+      <li class="main-nav-item">
+        <a href="#" title="" class="main-nav-link">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{{/if}}

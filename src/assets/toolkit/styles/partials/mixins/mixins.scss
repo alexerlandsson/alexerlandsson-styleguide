@@ -27,8 +27,8 @@
 // Active Scale
 // This mixin adds an :active scale state to any element
 
-@mixin active-scale($value: 0.95) {
-  @include transform-origin(50% 50%);
+@mixin active-scale($value: 0.95, $transform-origin: 50% 50%) {
+  @include transform-origin($transform-origin);
   transition: transform 200ms ease;
 
   &:active {
